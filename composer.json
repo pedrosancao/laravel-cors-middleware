@@ -1,0 +1,28 @@
+{
+    "name": "pedrosancao/laravel-cors-middleware",
+    "description": "CORS middleware for Laravel 5.5 and above",
+    "keywords" : ["laravel", "cors", "middleware"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pedro Sanção",
+            "homepage": "http://pedrosancao.github.io"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "^5.5|^6"
+    },
+    "autoload": {
+        "psr-4": { "PedroSancao\\": "src/" }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PedroSancao\\Cors\\ServiceProvider"
+            ]
+        }
+    }
+}
