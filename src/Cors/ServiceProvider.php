@@ -12,7 +12,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/cors.php', 'cors');
+        $this->mergeConfigFrom(__DIR__ . '/../config/cors-middleware.php', 'cors-middleware');
         
         $this->app['router']->aliasMiddleware('cors', CorsMiddleware::class);
     }
@@ -25,7 +25,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/cors.php' => config_path('cors.php'),
+            __DIR__ . '/../config/cors-middleware.php' => config_path('cors-middleware.php'),
         ], 'cors-middlware');
     }
 

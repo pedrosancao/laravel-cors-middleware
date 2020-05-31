@@ -21,8 +21,8 @@ class CorsMiddleware
 
     public function __construct()
     {
-        $this->allowedDomains = array_filter(explode(',', config('cors.allowed_domains', '')));
-        $this->allowedHeaders = array_filter(explode(',', config('cors.allowed_headers', '')));
+        $this->allowedDomains = array_filter(explode(',', config('cors-middleware.allowed_domains', '')));
+        $this->allowedHeaders = array_filter(explode(',', config('cors-middleware.allowed_headers', '')));
     }
 
     /**
