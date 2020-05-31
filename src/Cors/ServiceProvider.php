@@ -14,7 +14,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/cors.php', 'cors');
         
-        $this->app['router']->aliasMiddleware(CorsMiddleware::class);
+        $this->app['router']->aliasMiddleware('cors', CorsMiddleware::class);
     }
 
     /**
