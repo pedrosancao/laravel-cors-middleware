@@ -4,7 +4,8 @@ namespace PedroSancao\Cors;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route as Router;
 
 class CorsMiddleware
 {
@@ -64,10 +65,9 @@ class CorsMiddleware
 
     private function getRouteMethods(Request $request)
     {
-        $path = $request->getPathInfo();
-        return collect(Route::getRoutes())->filter(function($route) use ($path) {
-            return $route['uri'] === $path;
-        })->pluck('method')->toArray();
+        return collect(Router::getRoutes())->filter(function(Route $route) use ($request) { 
+            return $route->matches($request, false);
+        })->pluck('methods')->flatten()->toArray();
     }
 
 }
