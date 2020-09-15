@@ -1,6 +1,6 @@
 # CORS middleware for Laravel 5 and 6
 
-CORS middleware Laravel 5.5, 5.6, 5.7, 5.8 and 6.x.
+CORS middleware for Laravel 5.5 to 5.8 and 6.x.
 
 Laravel 7 comes with [fruitcake/laravel-cors](https://github.com/fruitcake/laravel-cors),
 so we recommend you go with it.
